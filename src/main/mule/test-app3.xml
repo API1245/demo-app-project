@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="95e0e8f7-e9ab-49ab-ba07-0b9800888398" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="test-app3Flow" doc:id="bc1ba4cb-3242-445c-b83f-cf2791565b03" >
+		<http:listener doc:name="Listener" doc:id="fb2d2213-568e-4fc8-83e5-eca7394d322a" config-ref="HTTP_Listener_config" path="/test"/>
+		<set-payload value='#["deploying"]' doc:name="Set Payload" doc:id="b53cb6f4-c987-4c58-9598-206339a20829" />
+		<logger level="INFO" doc:name="Logger" doc:id="9616aad7-90c6-4211-87db-8c986e27d32c" message="#[payload]"/>
+	</flow>
+</mule>
