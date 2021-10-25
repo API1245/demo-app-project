@@ -42,7 +42,7 @@
 				<connectedAppClientSecret>${connectedAppClientSecret}</connectedAppClientSecret>
 				<connectedAppGrantType>client_credentials</connectedAppGrantType>
 				<objectStoreV2>true</objectStoreV2>
-				<applicationName>demo-app</applicationName>
+				<applicationName>demo-soumik-trial</applicationName>
 				</cloudHubDeployment>
 				</configuration>
 			</plugin>
