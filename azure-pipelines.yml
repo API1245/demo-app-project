@@ -11,6 +11,7 @@ pool:
 
 variables:
 - group: Credentialgroup
+- group: Cache 
 
 steps:
 - task: Cache@2
@@ -18,7 +19,7 @@ steps:
   inputs:
       key: '"funcs" | maven | "$(Agent.OS)" | pom.xml'
       restoreKeys: |
-      path: $(MAVEN_CACHE_FOLDER)
+      path: $(CONFIG_CACHE)
 - task: DownloadSecureFile@1
   name: secureFile
   displayName: 'Download secure file'
